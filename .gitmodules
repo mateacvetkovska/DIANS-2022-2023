@@ -1,0 +1,3 @@
+[submodule "Домашна работа 2/tech-prototype/banks-frontend"]
+	path = Домашна работа 2/tech-prototype/banks-frontend
+	url = https://github.com/serdarska/banks-frontend.git
