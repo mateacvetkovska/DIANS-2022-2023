@@ -13,7 +13,7 @@ services:
       - POSTGRES_DB=banks
     #   Maps port 5430 (localhost) to port 5430 on the container. You can change the ports to fix your needs.
     ports:
-      - "5430:5432"
+      - "5436:5432"
     #   Set a volume some that database is not lost after shutting down the container.
     #   I used the name postgres-data but you can changed it to something else.
     volumes:
