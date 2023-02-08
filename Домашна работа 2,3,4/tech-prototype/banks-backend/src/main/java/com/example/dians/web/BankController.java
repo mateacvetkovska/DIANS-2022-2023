@@ -1,11 +1,13 @@
 package com.example.dians.web;
 
 import com.example.dians.entity.Bank;
-import com.example.dians.repository.BankRepository;
+import com.example.dians.service.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -15,16 +17,11 @@ import java.util.List;
 @CrossOrigin(origins="*")
 public class BankController {
     @Autowired
-    private final BankRepository bankRepository;
-
-    public BankController(BankRepository bankRepository) {
-        this.bankRepository = bankRepository;
-    }
+    private BankService bankService;
 
     @GetMapping()
-    public List<Bank> getBanksHomePage(){
-        return bankRepository.findAll();
+    public List<Bank> getAllBanks(){
+        return this.bankService.listAllBanks();
     }
-
 
 }
